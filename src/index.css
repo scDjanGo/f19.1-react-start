@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+
+
+
+
+@theme {
+    --color-b-sky: #118DA8;
+}

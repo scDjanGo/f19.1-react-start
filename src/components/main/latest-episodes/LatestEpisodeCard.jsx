@@ -1,0 +1,24 @@
+import BSkyButton from "../../../UI/buttons/BSkyButton"
+
+
+ function LatestEpisodeCard({cardData}) {
+    
+  return (
+    <div className="bg-black rounded-4xl p-10 flex gap-13.25">
+        <img src={cardData.img} alt="" className="max-w-97.5 max-h-116.25 object-cover" />
+
+        <div>
+            <span className="text-white text-[18px] font-normal bg-[#191919] p-[4px_16px] rounded-md">{cardData.tag}</span>
+            <p className="text-b-sky text-[17px] font-normal mt-12 mb-4.5">Eposode {cardData.episode}</p>
+            <h5 className="text-white text-[64px] font-normal leading-[1.1]">{cardData.title}</h5>
+            <p className="text-[#FFFFFFB2] text-[22px] font-normal mt-7 mb-4.5 leading-[1.1]">{cardData.description}</p>
+            <BSkyButton>
+                View Episode Details
+            </BSkyButton>
+        </div>
+    </div>
+  )
+}
+
+
+export default LatestEpisodeCard
