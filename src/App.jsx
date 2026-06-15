@@ -1,23 +1,47 @@
-
-import HeaderMain from "./components/header/HeaderMain"
-import LatestEpisodesHeader from "./components/main/latest-episodes/LatestEpisodesHeader"
-import LatestEpisodesContainer from "./components/main/latest-episodes/LatestEpisodesContainer"
-
-
+import { useState } from "react";
 
 function App() {
-// hello world
+  const [inputValue, setInputValue] = useState("");
+  const [items, setItems] = useState([]);
+
+  const handleChange = (e) => {
+    const { value } = e.target;
+
+    setInputValue(value);
+  };
+
+  const handleAdd = () => {
+    if (inputValue === "") return;
+    setItems((prev) => [inputValue, ...prev]);
+    setInputValue("");
+  };
+
   return (
-    <div id="main-container" className="bg-[#191919] px-12.5 min-h-dvh" >
-      <HeaderMain />
-
-      {/* Latest Episodes block */}
-      <LatestEpisodesHeader />
-      <LatestEpisodesContainer />
-      {/*  */}
-
+    <div className="p-5">
+      <div className="flex items-center gap-3 text-[14px]">
+        <input
+          type="text"
+          placeholder="Write text"
+          className="border rounded-lg "
+          value={inputValue}
+          onChange={handleChange}
+        />
+        <button
+          onClick={handleAdd}
+          className="bg-black rounded-lg text-white min-w-5.75 min-h-5.75"
+        >
+          +
+        </button>
+      </div>
+      <div className="flex flex-col gap-1 mt-4">
+        {items.map((item, index) => (
+          <p key={index}>{item}</p>
+        ))}
+      </div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+
+
