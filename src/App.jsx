@@ -1,27 +1,25 @@
-import { Component, useEffect, useState } from "react";
-import TestUseEffect from "./useEffect/TestUseEffect";
+import { useState } from "react";
+import MemoComponent from "./components/memoComponent";
 
-const BASE_URL = `https://jsonplaceholder.typicode.com/todos/`
+export default function App() {
+  const [input, setInput] = useState("")
 
-function App() {
-
-
-  useEffect(() => {
-    console.log("component did mount")
-  }, [])
 
   return (
     <div>
-      <TestUseEffect />
+
+      <input
+        type="text"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+        placeholder="Write text"
+      />
+      <p>Content: {input}</p>
+
+
+
+      ============
+      <MemoComponent />
     </div>
   );
-}
-
-export default App;
-
-
-
-
-class Comp extends Component {
-
 }
