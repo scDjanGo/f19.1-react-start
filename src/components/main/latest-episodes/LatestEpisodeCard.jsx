@@ -1,10 +1,14 @@
+import { useContext } from "react"
 import BSkyButton from "../../../UI/buttons/BSkyButton"
+import { ThemeContext } from "../../../context/themeContext"
 
 
  function LatestEpisodeCard({cardData}) {
+
+    const {theme} = useContext(ThemeContext)
     
   return (
-    <div className="bg-black rounded-4xl p-10 flex gap-13.25">
+    <div className={`rounded-4xl p-10 flex gap-13.25 ${theme === "light" ? "bg-green-400 " : "bg-black "}`}>
         <img src={cardData.img} alt="" className="max-w-97.5 max-h-116.25 object-cover" />
 
         <div>
