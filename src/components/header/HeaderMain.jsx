@@ -13,7 +13,6 @@ function HeaderMain() {
 
 
 
-  console.log(searchParams);
   
 
 
