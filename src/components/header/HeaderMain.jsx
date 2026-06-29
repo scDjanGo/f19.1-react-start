@@ -1,7 +1,21 @@
-import { Link, useNavigate } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+  useNavigate,
+  useNavigation,
+  useSearchParams,
+} from "react-router-dom";
 
 function HeaderMain() {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams()
+
+
+
+  console.log(searchParams);
+  
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +35,7 @@ function HeaderMain() {
 
   const handleNext = () => {
     navigate(+1);
-  }
+  };
 
   return (
     <header
