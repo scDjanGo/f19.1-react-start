@@ -7,6 +7,9 @@ import ContactPage from "./pages/contact/page";
 import HomePage from "./pages/page";
 import EpisodesCurrentPage from "./pages/episodes/id/page";
 import EpisodesLayout from "./pages/episodes/Layout";
+import ReactSneakersLayout from "./pages/react-sneakers/ReactSneakersLayout";
+import ReactSneakersProfile from "./pages/react-sneakers/profile/page";
+import ReactSneakersFavorites from "./pages/react-sneakers/favorites/page";
 
 function App(props) {
   return (
@@ -22,6 +25,13 @@ function App(props) {
         <Route path="contact" element={<ContactPage />} />
       </Route>
 
+      <Route path="react-sneakers" element={<ReactSneakersLayout />}>
+        <Route index element={<></>} />
+        <Route path="profile" element={<ReactSneakersProfile />} />
+
+        <Route path="favorites" element={<ReactSneakersFavorites />} />
+      </Route>
+
       <Route
         path="*"
         element={
@@ -32,14 +42,15 @@ function App(props) {
         }
       />
 
-
-      <Route path="/error" element={<div>
-
-        <p>something went wrong</p>
-        
-        
-        
-         <Link to={`/`}>Home page</Link> </div>} />
+      <Route
+        path="/error"
+        element={
+          <div>
+            <p>something went wrong</p>
+            <Link to={`/`}>Home page</Link>{" "}
+          </div>
+        }
+      />
     </Routes>
   );
 }
