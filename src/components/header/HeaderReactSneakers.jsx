@@ -9,7 +9,7 @@ const LINKS = [
 export default function HeaderReactSneakers() {
   return (
     <div className="py-11 px-10.75 flex items-center ga-3 justify-between border-b border-[#EAEAEA]">
-      <Link to={`/`} className="flex items-center gap-4">
+      <Link to={`/react-sneakers`} className="flex items-center gap-4">
         <img src="/img/react-sneakers.png" alt="" className="w-10 h-10" />
         <div className="flex flex-col">
           <h1 className="text-[20px] font-bold text-[#000000]">
