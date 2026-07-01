@@ -10,6 +10,7 @@ import EpisodesLayout from "./pages/episodes/Layout";
 import ReactSneakersLayout from "./pages/react-sneakers/ReactSneakersLayout";
 import ReactSneakersProfile from "./pages/react-sneakers/profile/page";
 import ReactSneakersFavorites from "./pages/react-sneakers/favorites/page";
+import AxiosPage from "./pages/axios/page";
 
 function App(props) {
   return (
@@ -31,6 +32,9 @@ function App(props) {
 
         <Route path="favorites" element={<ReactSneakersFavorites />} />
       </Route>
+
+
+      <Route path="/axios" element={<AxiosPage />} />
 
       <Route
         path="*"
